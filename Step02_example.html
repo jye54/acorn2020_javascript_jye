@@ -14,12 +14,27 @@
     <span>=</span>
     <strong id="result">0</strong>
 
+    <button onclick="clearResult()">clear</button>
 
     <script>
         function plus(){
             var a = document.querySelector("#num1").value;
             var b = document.querySelector("#num2").value;
-            document.querySelector("#result").innerText=parseInt(a)+parseInt(b);
+            var result = parseFloat(a)+parseFloat(b);
+            document.querySelector("#result").innerText=result;
+        }
+
+        // function plus(){
+        //     var a = document.querySelector("#num1").value;
+        //     var b = document.querySelector("#num2").value;
+        //     document.querySelector("#result").innerText=parseInt(a)+parseInt(b);
+        // }
+
+        function clearResult(){
+            document.querySelector("#num1").value="";
+            document.querySelector("#num2").value="";
+            document.querySelector("#result").innerText=0;
+
         }
     </script>
 </body>
