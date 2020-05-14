@@ -18,36 +18,61 @@
     <script>
         //임시저장 버튼 클릭 시 호출되는 함수
         function save(){
-            const name = document.querySelector("#name");
-            const addr = document.querySelector("#addr");
+            const name = document.getElementById("name");
+            const addr = document.getElementById("addr");
 
             InputDate(name.value, addr.value);
 
-            document.querySelector("#console").innerText=human.length; //배열의 길이 노출
+            document.getElementById("console").innerText=human.length; //배열의 길이 노출
         }
 
-        const human=[]; //배열 human선언
+        const human=[]; //동적 할당을 위한 배열 human선언
 
-        function InputDate(){
+        function InputDate(Iname, Iaddr){
             const obj={};
-            obj.name=name;
-            obj.addr=adrr;
+            obj.name=Iname;
+            obj.addr=Iaddr;
             human.push(obj); //생성된 객체(obj) 정보를 human(배열)에 넣어준다.
         }
 
         function show(){
             //divBox라는 컨테이너 생성. 여기에 p요소 생성할 것임.
-            const divBox=document.querySelector("#containner");
+            const divBox=document.getElementById("containner");
 
             // while문: 조건이 true일 때 실행되는 반복문. 
             // 조건(condition)은 먼저 참/거짓을 판단하고, true면 실행
 
             //divBox에 자식요소들이 있다면 모두 삭제
-            //
-            while(divBox.hasChildNodes()){ //hasChildNodes == 현재 노드에게 자식노드(child nodes)가 있는지 boolean값으로 반환
-                divBox.removeChild(divBox.firstChild);
+            while(divBox.hasChildNodes()){ //divBox에 자식노드가 있으면(true)
+                divBox.removeChild(divBox.firstChild); //(divBox의 첫번째) 자식노드 삭제
+            }
+
+            //human이라는 전역 배열을 loop돌면서 가지고 있는 
+            for(let idx in human){
+                drawElement(human[idx].name); //human(배열)의 각 인덱스별 값(이름)을 drawElement에 전달하고 함수 실행.
+                // drawElement(human[idx].name, human[idx].addr); 또는 drawElement(human[idx].addr);
             }
         }
+
+        // function drawElement(Ename, Eaddr){
+        //     const p = document.createElement("p");
+        //     p.innerHTML=`이름: ${Ename} 주소: ${Eaddr}`;
+        //     document.getElementById(containner).appendChild(p);
+        // }
+
+        function drawElement(name){
+                const p = document.createElement("p"); //p요소 생성
+                p.innerHTML=`이름: ${name}`; // `백틱`으로 문자열과 값을 같이 표현
+                //containner(div)를 찾아서 appendChild를 한다. 
+                document.getElementById("containner").appendChild(p); 
+                //appendChild == 자식요소를 추가하는 메소드.
+        }
+
+        // function drawElement(addr){
+        //     const p = document.createElement("p");
+        //     p.innerText="주소: "+addr; >>>>>>>>>>innerText와 innerHTML사용
+        //     document.getElementById("containner").appendChild(p);
+        // }
 
     </script>
 </body>
