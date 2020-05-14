@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_example.html</title>
+</head>
+<body>
+    <h1>arry 테스트 중</h1>
+    <input type="text" id="msg" placeholder="할 일 입력" />
+    <button onclick="save()">저장</button>
+    <button onclick="show()">저장된 내용 보기</button>
+    <p id="console"></p>
+
+    <script>
+        //페이지가 로딩되는 시점에 할일(문자열)을 저장할 배열 선언
+        var msgs=[];
+
+        //저장 버튼을 누르면 호출되는 함수
+        function save(){
+            // 1.입력한 문자열을 읽어온다.
+            var line=document.querySelector("#msg").value + "\n";
+            // var line=document.querySelector("#msg").value + "<br/>";
+
+            // 2. 배열에 저장(누적) 시킨다.
+            msgs.push(line);
+            //alert("저장완료");
+            document.querySelector("#msg").value="";
+        }
+
+        //저장된 내용 보기 누르면 호출되는 함수
+        function show(){
+            for(var i=0;i<msgs.length;i++){
+                document.querySelector("#console").innerText+=msgs[i];
+                // document.querySelector("#console").innerHTML+=msgs[i];
+            }
+        }
+    </script>
+
+</body>
+</html>
