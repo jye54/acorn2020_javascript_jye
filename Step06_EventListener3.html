@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step06_EventListener3.html</title>
+  </head>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <h1>EventListener 테스트</h1>
+
+    <!--div.box{div$}*5-->
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div>
+
+    <script>
+      //클래스명이 box인 div의 참조값을 배열에 담아오기
+      let divs = document.querySelectorAll(".box");
+      var divs2 = document.querySelectorAll(".box");
+      /*
+            divs 배열안에 있는 div의 참조값을 이용해서
+            이벤트 등록을 해서 동작해보세요.
+        */
+
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener("click", function () {
+          divs[i].innerText = "clicked";
+        });
+      }
+
+      for (var i = 0; i < divs.length; i++) {
+        divs2[i].addEventListener("click", function () {
+          this.innerText = "clicked";
+        });
+      }
+
+      // for (var i = 0; i < divs.length; i++) {
+      //   divs[i].addEventListener("click", TEST_FUNC);
+      // }
+
+      // function TEST_FUNC(evt) {
+      //   evt.target.innerText = "clicked!";
+      // }
+      // for (var i = 0; i < divs.length; i++) {
+      //   divs[i].addEventListener("click", () => {
+      //     divs[i].innerText = "clicked";
+      //   });
+      // }
+    </script>
+  </body>
+</html>

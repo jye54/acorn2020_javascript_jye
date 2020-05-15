@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_EventListener2.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener2 함수 테스트 중</h1>
+    
+    <div class="box" id="one">div</div>
+    <div class="box" id="two">div2</div>
+    <script>
+        //id가 one인 div를 click하면 해당 div의 innerText가 
+        // "clicked!"
+        // document.querySelector("#one").addEventListener("click",function(){
+        //     document.querySelector("#one").innerText="clicked!"
+        //     console.log("?!");
+        // });
+
+        document.querySelector("#one").addEventListener("click",function(){
+            this.innerText="clicked!";
+            console.log("?!");
+        });
+
+        document.querySelector("#two").addEventListener("click",function(){
+            this.innerText="clicked";
+        });
+    </script>
+</body>
+</html>
+
+
