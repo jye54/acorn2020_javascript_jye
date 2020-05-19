@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Step03_example2.html</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>plan object 테스트 중</h1>
-    <p>이름, 주소 입력 > 배열 저장 > 저장된 정보 보기 클릭 > 하단에 노출</p>
 
-    <input type="text" id="name" placeholder="이름 입력..."/>
-    <input type="text" id="addr" placeholder="주소 입력..."/>
+    <input type="text" id="name" placeholder="이름 입력..." />
+    <input type="text" id="addr" placeholder="주소 입력..." />
 
     <button onclick="save()">임시 저장</button>
     <button onclick="show()">저장된 정보 보기</button>
     <p id="console"></p>
 
     <script>
-        var arr=[]; 
-        
-        function save(){  
-            var a=document.querySelector("#name").value;
-            var b=document.querySelector("#addr").value;
+      /*
+        1. input요소에 이름과 주소를 입력하고 '임시저장'버튼을 클릭하면 data가 저장이 되고
+        2. '저장된 정보 보기'버튼을 클릭하면 저장했던 data를 하단에 출력*/
+      var arr = [];
 
-            dataSave(a,b);
+      function save() {
+        var a = document.querySelector("#name").value;
+        var b = document.querySelector("#addr").value;
 
-            document.querySelector("#name").value="";
-            document.querySelector("#addr").value="";
-        }
-        
-        function show(){       
-            document.querySelector("#console").innerText="이름: "+obj.name+" 주소: "+obj.addr;
-        }
+        dataSave(a, b);
 
-        function dataSave(dname, daddr){ //전달인자
+        document.querySelector("#name").value = "";
+        document.querySelector("#addr").value = "";
+      }
+
+      function show() {
+        document.querySelector("#console").innerText = "이름: " + obj.name + " 주소: " + obj.addr;
+      }
+
+      function dataSave(dname, daddr) {
+        //전달인자
         //save()의 변수 a, b를 전달받아서 실행
-            var obj={};
-      
-            obj.name=dname;
-            obj.addr=daddr;
-            arr.push(obj);
-            console.log(arr);          
-        }
+        var obj = {};
+
+        obj.name = dname;
+        obj.addr = daddr;
+        arr.push(obj);
+        console.log(arr);
+      }
     </script>
-</body>
+  </body>
 </html>

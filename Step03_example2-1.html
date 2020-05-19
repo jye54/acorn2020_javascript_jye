@@ -11,9 +11,7 @@
     <button onclick="save()">임시저장</button>
     <button onclick="show()">불러오기</button>
     <span id="console"></span>
-    <div id="containner" class="containner">
-      <!--동적으로 추가될 p요소 들어올 곳-->
-    </div>
+    <div id="containner" class="containner"><!--동적으로 추가될 p요소 들어올 곳--></div>
 
     <script>
       //임시저장 버튼 클릭 시 호출되는 함수
@@ -58,15 +56,9 @@
       function drawElement(Ename, Eaddr) {
         const p = document.createElement("p"); //p요소 생성
         p.innerHTML = `이름: ${Ename} 주소: ${Eaddr}`; // `백틱`으로 문자열과 값을 같이 표현
-        //containner(div)를 찾아서 appendChild를 한다.
-        document.getElementById("containner").appendChild(p); //appendChild == 자식요소를 추가하는 메소드.
+        // p.innerText = "이름: " + Ename + " 주소: " + Eaddr;
+        document.getElementById("containner").appendChild(p); //containner(div)를 찾아서 appendChild(자식요소 추가)를 한다.
       }
-
-      // function drawElement(addr){
-      //     const p = document.createElement("p");
-      //     p.innerText="주소: "+addr; >>>>>>>>>>innerText와 innerHTML사용
-      //     document.getElementById("containner").appendChild(p);
-      // }
     </script>
   </body>
 </html>

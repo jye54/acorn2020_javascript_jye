@@ -8,20 +8,10 @@
   <body>
     <!-- 두 숫자를 입력받아 +버튼을 클릭하면 합 도출-->
     <h1>산술연산 예제</h1>
-    <input
-      type="text"
-      id="num1"
-      onkeydown="keyevent(this);"
-      placeholder="숫자입력..."
-    />
+    <input type="text" id="num1" onkeydown="keyevent(this);" placeholder="숫자입력..." />
     <button onclick="plus()">+</button>
 
-    <input
-      type="text"
-      id="num2"
-      onkeydown="keyevent(this);"
-      placeholder="숫자입력..."
-    />
+    <input type="text" id="num2" onkeydown="keyevent(this);" placeholder="숫자입력..." />
     <span>=</span>
     <strong id="result">0</strong>
 
@@ -53,13 +43,13 @@
             2. event.returnValue
                 웹페이지에서 일어난 이벤트 정보를 가지고 있는 객체
         
-        */
+        
       function keyevent() {
         if (event.keyCode < 48 || event.keyCode > 57) {
           event.returnValue = false;
           alert("숫자만 입력");
         }
-      }
+      }*/
     </script>
   </body>
 </html>
