@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step10_string.html</title>
+  </head>
+  <body>
+    <h1>string type 테스트 중</h1>
+    <script>
+      /*
+        객체(object)
+        1. attribute(=저장소)
+        2. function(method)
+
+        ex. arr.length (배열의 속성), arr.push(40); (배열의 기능)
+
+        String type도 객체이다.
+        객체는 저장소(속성)과 기능(function)으로 구성된다.
+      */
+      var line = "abcde12345";
+      var line2 = "abcde/12345/!@#$%/가나다라";
+      //string type의 저장소 참조
+      var size = line.length;
+      //string type의 기능 사용
+      var result = line.replace("e", "EEE");
+      //범위 0이상 5미만, cf.지정된 범위가 있으면 보통 'n이상 ~ n1미만'임.
+      var result2 = line.substring(0, 5);
+      var result3 = line2.split("/");
+
+      /* 
+        back tick문자를 이용해서 문자열을 만들 수도 있다.
+        back tick문자열 형식은 ECMAScript6에서 추가 됐다.
+        
+      */
+      var info = `매주 금요일
+      소지품 정리
+      구글 ID 동기화 해제
+      백틱쓰면 여러줄이 된대`;
+      var myName = "김구라";
+      var yourName = "원숭이";
+      var info2 = `내 이름: ${myName}, 네 이름: ${yourName}`;
+    </script>
+  </body>
+</html>

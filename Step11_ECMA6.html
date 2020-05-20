@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step11_ECMA6.html</title>
+  </head>
+  <body>
+    <h1>ECMAScript6 테스트 중</h1>
+    <script>
+      //   for (var i = 0; i < 5; i++) {
+      //     console.log(i);
+      //   }
+
+      /*
+        let 
+        -범위: 변수를 사용할 수 있는 범위가 (블록단위로 {} ) 세분화 된다.
+        
+        var은 함수단위로 구분되어있어서, 만약 함수내에서만 사용할 변수를 선언해도
+        전역에서 변수사용이 가능함.
+
+        아래 조건문에서 let i, myName은 조건문 내에서만 사용 할 수 있다.
+    */
+      //변수를 선언할 때 let으로 선언하면 선언된 블록내에서만 사용 할 수 있다.
+      for (let i = 0; i < 5; i++) {
+        console.log(i);
+      } //따라서, i는 for문 밖에서 사용할 수 없다
+
+      if (true) {
+        let myName = "김구라";
+      } //myName은 if문 밖에서 사용할 수 없다.
+
+      //const 상수(수정불가한 변수)도 만들 수 있다.
+      const PI = 3.14159;
+      //PI = 100; 오류
+
+      /*
+      한 번 선언 된 값은 수정 안됨. 
+      
+      ex. 
+      const nums=[10,20,30];
+      nums.push(40); 가능.
+      
+      nums는 참조 값을 갖고 있기 때문에 item에 데이터 추가 가능하다.
+      (참조값에 영향을 주지 않기 때문에.)
+
+      그러나 nums=[]; 은 참조값이 변경되기 때문에 오류난다.
+      */
+
+      let PI = 3.14; //상수로 선언한 것을 다시 선언할 수 없다.
+    </script>
+  </body>
+</html>

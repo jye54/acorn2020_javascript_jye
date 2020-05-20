@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step09_if3.html</title>
+  </head>
+  <body>
+    <h1>다중 if문 테스트 중</h1>
+    <button id="inputBtn">점수 입력 하기</button>
+    <p id="console"></p>
+    <script>
+      /*
+            점수가 90이상이면 'A', 80이상이면 'B', 70이상이면 'C', 60이상이면 'D', 60미만이면 'F'를
+            P요소에 출력하세요.
+        */
+
+      document.querySelector("#inputBtn").addEventListener("click", function () {
+        var jumsu = parseFloat(prompt("점수를 입력하세요."));
+        var grade;
+
+        // if (jumsu >= 90) {
+        //   document.querySelector("#console").innerText = "A";
+        // } else if (jumsu >= 80) {
+        //   document.querySelector("#console").innerText = "B";
+        // } else if (jumsu >= 70) {
+        //   document.querySelector("#console").innerText = "C";
+        // } else if (jumsu >= 60) {
+        //   document.querySelector("#console").innerText = "D";
+        // } else {
+        //   document.querySelector("#console").innerText = "F";
+        // }
+
+        if (jumsu >= 90) {
+          grade = "A";
+        } else if (jumsu >= 80) {
+          grade = "B";
+        } else if (jumsu >= 70) {
+          grade = "C";
+        } else if (jumsu >= 60) {
+          grade = "D";
+        } else {
+          grade = "F";
+        }
+        document.querySelector("#console").innerText = "님 점수는 " + grade + "입니다.";
+      });
+    </script>
+  </body>
+</html>
