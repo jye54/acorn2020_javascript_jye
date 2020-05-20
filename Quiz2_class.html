@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Quiz2_class</title>
+   </head>
+   <body>
+      <h1>ECMAScript6 테스트 중</h1>
+      <script>
+         class tumblur {
+            constructor(material, color, size, maker) {
+               this.material = material;
+               this.color = color;
+               this.size = size;
+               this.maker = maker;
+            }
+
+            get number() {
+               let num = this.idNum;
+               return num;
+            }
+
+            set number(idNum) {
+               this.idNum = idNum;
+            }
+
+            //기능
+            warm(temp) {
+               console.log(`${temp} 온도로 보온되고 있습니다.`);
+            }
+
+            cool(temp) {
+               console.log(`${temp} 온도로 보냉되고 있습니다.`);
+            }
+         }
+
+         let t1 = new tumblur("스테인", "파랑", "400", "락앤락");
+         let t2 = new tumblur("금", "흰색", "360", "스벅");
+         let t3 = new tumblur("은", "노랑", "500", "뺵다방");
+         let t4 = new tumblur("동", "초록", "300", "커피빈");
+      </script>
+   </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step11_ECMA6_3</title>
+  </head>
+  <body>
+    <h1>ECMAScrpt6 테스트 중</h1>
+    <button id="testBtn">테스트</button>
+    <script>
+      //인자로 전달되는 숫자의 제곱을 리턴하는 익명함수, 표현식들
+      let squqre = function (num1) {
+        return num1 * num1;
+      };
+
+      let b = (num1) => {
+        return num1 * num;
+      };
+
+      //Arrow(화살표) 함수
+      let c = (num1) => num1 * num2;
+
+      //버튼을 눌렀을 때 호출되는 arrow 함수 등록하기, Arrow함수는 익명함수로만 사용 가능하다.
+      document.querySelector("#testBtn").addEventListener("click", () => {
+        console.log("버튼을 눌렀네용?");
+      });
+
+      const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      //let result = nums.filter(function (item) {});
+      let result = nums.filter((item) => {
+        return item % 2 == 0;
+      });
+
+      let result2 = nums.filter((item) => item % 3 == 0);
+
+      //nums.forEach(function(){});함수 변경하기
+      nums.forEach((item, index) => {
+        console.log(item + " | " + index);
+      });
+    </script>
+  </body>
+</html>

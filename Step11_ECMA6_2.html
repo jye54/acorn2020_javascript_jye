@@ -10,13 +10,26 @@
     <script>
       // Car클래스 정의하기
       class Car {
+        //속성(저장소) 정의하기
+        brand = "벤틀리";
+        color = "MINT";
+
+        //기능
         drive() {
-          console.log("달려요!");
+          console.log(this.brand + "가 달려요");
         }
       }
-
+      //Car 클래스로 객체를 생성해서 참조값을 car1, car2 변수에 담기
       let car1 = new Car();
       let car2 = new Car();
+
+      let car3 = {
+        brand: "롤스로이스",
+        color: "red",
+        drive: function () {
+          console.log(this.brand + "가 붕붕");
+        },
+      };
     </script>
   </body>
 </html>
