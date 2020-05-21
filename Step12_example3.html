@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Step12_example3.html</title>
-   </head>
-   <body>
-      <h1>createElement 테스트 중</h1>
-      <input type="text" id="inputNum" placeholder="번호입력" />
-      <input type="text" id="inputName" placeholder="이름입력" />
-      <input type="text" id="inputAddr" placeholder="주소입력" />
-      <button id="addBtn">추가</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step12_example3.html</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>createElement 테스트 중</h1>
+    <input type="text" id="inputNum" placeholder="번호입력" />
+    <input type="text" id="inputName" placeholder="이름입력" />
+    <input type="text" id="inputAddr" placeholder="주소입력" />
+    <button id="addBtn">추가</button>
 
-      <h1>추가된 회원 목록입니다.</h1>
-      <table>
-         <thead>
-            <tr>
-               <th>번호</th>
-               <th>이름</th>
-               <th>주소</th>
-            </tr>
-         </thead>
-         <tbody></tbody>
-      </table>
+    <h1>추가된 회원 목록입니다.</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>주소</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-      <script>
-         document.querySelector("#addBtn").addEventListener("click", function () {
-            let getNum = document.querySelector("#inputNum").value;
-            let getName = document.querySelector("#inputName").value;
-            let getAddr = document.querySelector("#inputAddr").value;
+    <script>
+      //버튼 클릭 시 input에서 받은 정보 table추가
+      document.querySelector("#addBtn").addEventListener("click", function () {
+        let getNum = document.querySelector("#inputNum").value;
+        let getName = document.querySelector("#inputName").value;
+        let getAddr = document.querySelector("#inputAddr").value;
 
-            // document.querySelector("p").innerText = getNum;
-            // function appTable() {}
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
 
-            let td1 = document.createElement("td");
-            td1.innerText = getNum;
-            let td2 = document.createElement("td");
-            td1.innerText = getName;
-            let td3 = document.createElement("td");
-            td1.innerText = getAddr;
+        td1.innerText = getNum;
+        td2.innerText = getName;
+        td3.innerText = getAddr;
 
-            let tr = document.createElement("tr");
-            tr.append(td1);
-            tr.append(td2);
-            tr.append(td3);
+        let tr = document.createElement("tr");
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
 
-            document.querySelector("tbody").append(tr);
-         });
-      </script>
-   </body>
+        document.querySelector("tbody").append(tr);
+
+        //추가된 정보 클릭하면 삭제confim 묻기
+        tr.addEventListener("click", function () {
+          let removeTr = confirm("삭제 할까요?");
+          if (removeTr) {
+            this.remove();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
