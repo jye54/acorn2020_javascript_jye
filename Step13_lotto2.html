@@ -56,7 +56,10 @@
           //2-1. nums 배열에 있는 숫자를 이용해서 img요소 만들기
           for (let i = 0; i < result.length; i++) {
             let ball = document.createElement("img");
-            ball.setAttribute("src", "images/lotto-ball-" + result[i] + ".png");
+            ball.setAttribute(
+              "src",
+              "../images/lotto-ball-" + result[i] + ".png"
+            );
             //ball.setAttribute("src", `images/lotto-ball-${nums[i]}.png`);
 
             //#wrapper div에 추가하기
