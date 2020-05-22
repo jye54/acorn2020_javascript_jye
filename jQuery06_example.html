@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery06_example.html</title>
+  </head>
+  <body>
+    <h1>jQuery 예제</h1>
+    <input type="text" id="inputMsg" />
+    <button id="addBtn">추가</button>
+    <ul id="msgList"></ul>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+      $("#addBtn").on("click", function () {
+        //입력한 문자열을 읽어온다.
+        let msg = $("#inputMsg").val();
+        let btn = $("<button>")
+          .text("x")
+          .on("click", function () {
+            $(this).parent().remove();
+          });
+
+        //li요소를 만들어서 msg출력하고 #msgList에 추가하기
+        $("<li>").text(msg).append(btn).appendTo("#msgList");
+        //입력창 지우고, 포커스 주기
+        $("#inputMsg").val("").focus();
+
+        //solution 2
+        // $("li>button").on("click", function () {
+        //   $(this).parent().remove();
+        // });
+
+        //     btn.on("click", function(){
+        //         $(this).parent().remove();
+        //     });
+      });
+    </script>
+  </body>
+</html>

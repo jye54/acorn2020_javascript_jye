@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery05_traverse.html</title>
+  </head>
+  <body>
+    <div id="container">
+      <ul>
+        <li><a href="#" id="one">하나</a></li>
+        <li><a href="#" id="two">두울</a></li>
+        <li><a href="#" id="three">세엣</a></li>
+      </ul>
+    </div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+      /*
+            .parent()
+            .children()
+            .siblings()
+            .first()
+            .lsat()
+        */
+
+      // a요소에 click 이벤트가 일어 났을 때 호출되는 함수 등록
+      $("a").on("click", function () {
+        $(this)
+          .text("clicked") //a
+          .parent()
+          .css("background-color", "lightblue") //li
+          .siblings()
+          .css("background-color", "#00ff00") //siblings li
+          .parent()
+          .css("border", "1px solid red") //ul
+          //.slideUp(3000);
+          .fadeOut(5000);
+      });
+    </script>
+  </body>
+</html>

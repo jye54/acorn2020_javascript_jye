@@ -7,28 +7,87 @@
   </head>
   <body>
     <h1>lotto 추첨기 만들기</h1>
+    <button id="run">RUN</button>
     <p id="console"></p>
+
+    <!-- LOTTO 추첨 번호 만들기
+        1. 6개의 랜덤 숫자 추첨
+        1-1. 중복되는 숫자는 제거
+        1-2. 오름차순 정렬
+
+        2. 이미지로 나타나게 함.
+        2-1. RUN Btn 클릭할 때 마다 이전 번호는 삭제
+
+        random숫자 45개 parseInt(Math.random() * 45) + 1
+        arryName.indexOf()
+        ____(첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환)
+        ____()의 값이 배열에 있으면 인덱스, 존재하지 않으면 -1 리턴.
+        ex. 
+          let arry = [1,2,5,9,7,6];
+          arry.indexOf(7);
+          __4 반환
+          arry.indexOf(8);
+          __-1 반환
+     -->
+
     <script>
-      var nums = [];
-      //1. 로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장해 보세요.
-      while (true) {
-        let lottoNum = parseInt(Math.random() * 45) + 1;
-        //만일 중복된 값이 없을때
-        if (nums.indexOf(lottoNum) == -1) {
-          //배열에 로또 번호를 넣어준다.
-          nums.push(lottoNum);
+      // let lottoNum = parseInt(Math.random() * 45) + 1;
+      // let arrBox = [];
+
+      //버튼클릭.
+      document.querySelector("#run").addEventListener("click", function () {
+        let arrBox = [];
+
+        //배열에 숫자 6개가 채워질 때 까지돌려야해서 while 써야함.
+        while (true) {
+          let lottoNum = parseInt(Math.random() * 45) + 1;
+          //중복 숫자 제거, indexOf를 이용
+          if (arrBox.indexOf(lottoNum) == -1) {
+            arrBox.push(lottoNum);
+          }
+          //배열에 6개 들어가면 while중단
+          if (arrBox.length == 6) {
+            break;
+          }
+          document.querySelector("#console").innerText = arrBox;
+          //오름차순 = 버블소트
         }
-        //만일 nums 에 6개의 숫자가 모두 들어갔다면 반복문 탈출
-        if (nums.length == 6) {
-          break;
+      });
+
+      function bubbleSort(x, y) {
+        let temp;
+        let x;
+        let y;
+
+        for(){ //x
+          for(){ //y
+
+          }
         }
       }
-      //2. nums 배열에 저장된 숫자를 p 요소에 순서대로 출력해 보세요.
-      let line = "";
-      for (let i = 0; i < nums.length; i++) {
-        line = line + nums[i] + " ";
-      }
-      document.querySelector("#console").innerText = line;
+
+      // document.querySelector("#run").addEventListener("click", function () {
+      //   var nums = [];
+      //   //1. 로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장해 보세요.
+      //   while (true) {
+      //     let lottoNum = parseInt(Math.random() * 45) + 1;
+      //     //만일 중복된 값이 없을때
+      //     if (nums.indexOf(lottoNum) == -1) {
+      //       //배열에 로또 번호를 넣어준다.
+      //       nums.push(lottoNum);
+      //     }
+      //     //만일 nums 에 6개의 숫자가 모두 들어갔다면 반복문 탈출
+      //     if (nums.length == 6) {
+      //       break;
+      //     }
+      //   }
+      //   //2. nums 배열에 저장된 숫자를 p 요소에 순서대로 출력해 보세요.
+      //   let line = "";
+      //   for (let i = 0; i < nums.length; i++) {
+      //     line = line + nums[i] + " ";
+      //   }
+      //   document.querySelector("#console").innerText = line;
+      // });
     </script>
   </body>
 </html>

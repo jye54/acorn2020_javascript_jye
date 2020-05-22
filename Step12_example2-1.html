@@ -20,15 +20,16 @@
       document.querySelector("#addBtn").addEventListener("click", function () {
         //1. 입력한 할일을 읽어온다.
         let msg = document.querySelector("#inputMsg").value;
+
         //2. li요소를 만든다.
-        // >>>>원하는 참조값을 가져오기 위해 document.querySelector 사용
+        //  __원하는 참조값을 가져오기 위해 document.querySelector 사용
         let newli = document.createElement("li");
         //3. 만든 li요소에 innerText출력
         newli.innerText = msg;
         //4. ul요소에 append되게 한다.
         document.querySelector("#toDoList").append(newli);
         //5. 만든 li요소에 click리스너 함수 등록하기
-        //>>>이미 만들어진 li(newli)요소를 이용하여 이벤트
+        //____이미 만들어진 li(newli)요소를 이용하여 이벤트
         newli.addEventListener("click", function () {
           console.log("li클릭");
           this.remove();
