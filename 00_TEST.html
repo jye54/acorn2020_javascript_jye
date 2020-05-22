@@ -10,7 +10,6 @@
     <input type="text" id="msg" placeholder="할 일 입력" />
     <button onclick="save()">저장</button>
     <button onclick="show()">저장된 내용 보기</button>
-    <p id="console"></p>
     <div id="containner"></div>
 
     <script>
@@ -23,21 +22,19 @@
         document.querySelector("#msg").value = "";
       }
 
-      /********버튼 클릭할 때마다 기존에 노출된 data는 삭제될 수 있도록 수정********/
-      function clear() {
-        //div.컨테이너 생성
-        var divB = document.querySelector("#containner");
-
-        while (divB.hasChildNodes()) {
-          divB.removeChild(divB.firstChild);
+      //저장된 내용 보기 누르면 호출되는 함수
+      function show() {
+        clear();
+        for (var i = 0; i < msgs.length; i++) {
+          document.querySelector("#containner").innerText += msgs[i];
         }
       }
 
-      //저장된 내용 보기 누르면 호출되는 함수   ???여기 수정
-      function show() {
-        for (var i = 0; i < msgs.length; i++) {
-          document.querySelector("#console").innerText += msgs[i];
-        }
+      /* 기존에 저장된 data삭제(중복노출X) */
+      function clear() {
+        //div.컨테이너 생성
+        var getCon = document.querySelector("#containner");
+        getCon.innerHTML = "";
       }
     </script>
   </body>
