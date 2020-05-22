@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery02_$.html</title>
+  </head>
+  <body>
+    <div id="one">div1</div>
+    <div id="two" class="my-class">div2</div>
+    <div class="my-class">div3</div>
+    <div class="my-class">div4</div>
+    <div>div5</div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+      /* 
+        $()문서객체 참조값을 배열로 리턴한다.
+
+        $().action();
+        $(select).action().action2()... 
+
+        !) select == css Select
+        !) 선택자(select)를 배열로 가져오기 때문에 action의 영향을 전부 받는다.
+            (문서객체 내부적으로 for을 돌면서 action 적용)
+            ex. $("div").text("김구라");
+                5개의 div에 전부 innerText영향을 받음.
+      */
+
+      //모든 div의 참조값이 들어있는 배열
+      let divs = document.querySelectorAll("div");
+
+      //모든 div의 innerText를 "김구라" 로 바꿔주면?
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].innerText = "김구라";
+      }
+
+      // 이것을 jQuery 문법으로 사용한다면
+      $("div").text("김구라");
+    </script>
+  </body>
+</html>
