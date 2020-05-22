@@ -31,14 +31,10 @@
      -->
 
     <script>
-      // let lottoNum = parseInt(Math.random() * 45) + 1;
-      // let arrBox = [];
-
       //버튼클릭.
       document.querySelector("#run").addEventListener("click", function () {
         let arrBox = [];
 
-        //배열에 숫자 6개가 채워질 때 까지돌려야해서 while 써야함.
         while (true) {
           let lottoNum = parseInt(Math.random() * 45) + 1;
           //중복 숫자 제거, indexOf를 이용
@@ -49,23 +45,15 @@
           if (arrBox.length == 6) {
             break;
           }
-          document.querySelector("#console").innerText = arrBox;
-          //오름차순 = 버블소트
-        }
+
+          //오름차순
+          arrBox.sort(function (x, y) {
+            return x - y;
+          });
+        } //while 종료
+
+        document.querySelector("#console").innerText = arrBox;
       });
-
-      function bubbleSort(x, y) {
-        let temp;
-        let x;
-        let y;
-
-        for(){ //x
-          for(){ //y
-
-          }
-        }
-      }
-
       // document.querySelector("#run").addEventListener("click", function () {
       //   var nums = [];
       //   //1. 로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장해 보세요.
