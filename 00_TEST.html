@@ -6,35 +6,38 @@
     <title>TEST</title>
   </head>
   <body>
-    <h1>arry 테스트 중</h1>
-    <input type="text" id="msg" placeholder="할 일 입력" />
-    <button onclick="save()">저장</button>
-    <button onclick="show()">저장된 내용 보기</button>
-    <div id="containner"></div>
-    ㅜ
+    <!-- <p>Step08_example, 친구 정보를 담은 배열 선언 후 검색한 이름이 친구정보에 있다면 친구의 모든 정보 가져오기. (Step08_example1-1참고)</p> -->
+
+    <input type="text" id="search" placeholder="검색" />
+    <button id="check">확인</button>
+    <p id="console"></p>
     <script>
-      var msgs = [];
+      let Informations = [];
+      Informations.push({ name: "지소연", num: "10", addr: "영국" });
+      Informations.push({ name: "김구라", num: "010", add: "강남" });
+      Informations.push({ name: "홍광호", num: "02", add: "서초" });
 
-      function save() {
-        var line = document.querySelector("#msg").value + "\n";
+      //버튼클릭
+      document.querySelector("#check").addEventListener("click", checkName); //함수선언방법주의
 
-        msgs.push(line);
-        document.querySelector("#msg").value = "";
-      }
+      //함수
+      function checkName() {
+        let getName = document.querySelector("#search").value;
+        let isExist = false; // A :: 초기값을 false로 설정하고,
 
-      //저장된 내용 보기 누르면 호출되는 함수
-      function show() {
-        clear();
-        for (var i = 0; i < msgs.length; i++) {
-          document.querySelector("#containner").innerText += msgs[i];
+        for (let i = 0; i <= Informations.length; i++) {
+          if (getName == Informations[i].name) {
+            // ****여기 오류나는 것 solution****
+            document.querySelector("#console").innerText =
+              "이름: " + Informations[i].name + "\n번호: " + Informations[i].num + "\n주소: " + Informations[i].add;
+
+            isExist = true; // A-1 :: 저장된 정보와 동일하면 isExist 값을 true로 변경한다.
+          }
+          if (isExist == false) {
+            // A-2 :: 저장된 정보와 일치하지 않으면 false로 초기값이 유지되면서 document. 실행
+            document.querySelector("#console").innerText = getName + " 와(과) 일치하는 정보가 없습니다.";
+          }
         }
-      }
-
-      /* 기존에 저장된 data삭제(중복노출X) */
-      function clear() {
-        //div.컨테이너 생성
-        var getCon = document.querySelector("#containner");
-        getCon.innerHTML = "";
       }
     </script>
   </body>
