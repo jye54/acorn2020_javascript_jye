@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TEST</title>
-  </head>
-  <body>
-    <!-- <p>Step08_example, 친구 정보를 담은 배열 선언 후 검색한 이름이 친구정보에 있다면 친구의 모든 정보 가져오기. (Step08_example1-1참고)</p> -->
 
-    <input type="text" id="search" placeholder="검색" />
-    <button id="check">확인</button>
-    <p id="console"></p>
-    <script>
-      let Informations = [];
-      Informations.push({ name: "지소연", num: "10", addr: "영국" });
-      Informations.push({ name: "김구라", num: "010", add: "강남" });
-      Informations.push({ name: "홍광호", num: "02", add: "서초" });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEST</title>
+</head>
 
-      //버튼클릭
-      document.querySelector("#check").addEventListener("click", checkName); //함수선언방법주의
+<body>
+  <!-- <p>Step08_example, 친구 정보를 담은 배열 선언 후 검색한 이름이 친구정보에 있다면 친구의 모든 정보 가져오기. (Step08_example1-1참고)</p> -->
 
-      //함수
-      function checkName() {
-        let getName = document.querySelector("#search").value;
-        let isExist = false; // A :: 초기값을 false로 설정하고,
+  <input type="text" id="search" placeholder="검색" />
+  <button id="check">확인</button>
+  <p id="console"></p>
+  <script>
+    let Informations = []; //친구정보
+    Informations.push({ name: "지소연", num: "10", addr: "영국" });
+    Informations.push({ name: "김구라", num: "010", add: "강남" });
+    Informations.push({ name: "홍광호", num: "02", add: "서초" });
 
-        for (let i = 0; i <= Informations.length; i++) {
-          if (getName == Informations[i].name) {
-            // line29 ****오류나는 것 solution****
-            document.querySelector("#console").innerText =
-              "이름: " + Informations[i].name + "\n번호: " + Informations[i].num + "\n주소: " + Informations[i].add;
+    //버튼클릭
+    document.querySelector("#check").addEventListener("click", checkName); //함수선언방법주의
 
-            isExist = true; // A-1 :: 저장된 정보와 동일하면 isExist 값을 true로 변경한다.
-          }
-          if (isExist == false) {
-            // A-2 :: 저장된 정보와 일치하지 않으면 false로 초기값이 유지되면서 document. 실행
-            document.querySelector("#console").innerText = getName + " 와(과) 일치하는 정보가 없습니다.";
-          }
+    //함수
+    function checkName() {
+      let getName = document.querySelector("#search").value;
+      let isExist = false; // A :: 초기값을 false로 설정하고,
+
+      //length는 index번호가 아닌 값의 개수를 뜻함.
+      //그래서 범위 <= 이하로 하면 i가 3까지 올라가서 오류.
+      for (let i = 0; i < Informations.length; i++) {
+        if (getName == Informations[i].name) {
+          document.querySelector("#console").innerText =
+            "이름: " + Informations[i].name + "\n번호: " + Informations[i].num + "\n주소: " + Informations[i].add;
+
+          isExist = true; // A-1 :: 저장된 정보와 동일하면 isExist 값을 true로 변경한다.
+          break;
+        }
+        if (isExist == false) {
+          // A-2 :: 저장된 정보와 일치하지 않으면 false로 초기값이 유지되면서 document. 실행
+          document.querySelector(".console").innerText = `${getName}과(와) 일치하는 정보가 없습니다.`;
         }
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <p class="my-class">abcd</p>
+    </div>
+    <!-- <a href="hello.html" class="my-link">이동하기</a>
+    동적요소 만들기 -->
+
+    <!-- 
+        <p class="my-class">abcd</p>
+        var p = document.createElement("p");
+        p.setAttribute("class","my-class");
+        p.innerText="abcd";
+        document.querySelector("#one").append(p); 
+    -->
+
+    <script>
+        let NewP = document.querySelector("p");
+        NewP.setAttribute("class", "my-class");
+        NewP.innerText = "abcd";
+        document.querySelector("#wrap").append(NewP);
+    </script>
+</body>
+
+</html>

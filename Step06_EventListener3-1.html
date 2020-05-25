@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step06_EventListener3.html</title>
+</head>
+<style>
+    .box {
+        width: 50px;
+        height: 50px;
+        background-color: lightcoral;
+        border: 1px solid black;
+    }
+
+    #box {
+        width: 50px;
+        height: 50px;
+        background-color: darkgreen;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <!--div.box{div$}*5-->
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <p></p>
+    <div id="box">div1-1</div>
+    <div id="box">div2-1</div>
+    <div id="box">div3-1</div>
+
+    <script>
+        /*
+          A.
+          divs 배열안에 있는 div의 참조값을 이용해서 이벤트등록을 해서 동작해보세요.
+          box를 클릭하면 innerText가 'clicked'로 변경됨.
+
+          B.
+          5개의 divBox와 text를 각각 만들기
+          첫번째 box를 클릭하면 innerText가 그에 대응하는 text로 변경되도록 동작.
+        */
+
+        let boxs = document.querySelectorAll(".box");
+        //querySelectorAll 주의! All을 사용해야 배열로 담아올 수 있음!
+
+        for (let i = 0; i < boxs.length; i++) {
+            boxs[i].addEventListener("click", function () {
+                boxs[i].innerText = "clicked";
+            });
+        }
+
+        //B
+        let divs = document.querySelectorAll("#box");
+        let msgs = document.querySelectorAll("#box").value;
+
+
+    </script>
+</body>
+
+</html>
