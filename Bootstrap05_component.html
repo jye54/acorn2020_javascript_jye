@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap05_component.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Alert</h1>
+      <div class="alert alert-success">
+        작업 성공했습니다.
+      </div>
+      <div class="alert alert-danger">
+        system: errorrrrrrrrrrrrrr.
+        <a href="#" class="alert-link">다시 시도하기</a>
+      </div>
+      <h1>취소 가능한 alert</h1>
+      <div class="alert alert-warning alert-dismissible fade show">
+        <strong>Caution!</strong> 컨텐츠가 삭제 됩니다.
+        <button class="close" data-dismiss="alert">&times;</button>
+        <!--자바스크립트 관련(동작하는 스크립트는) 'data- ~'클래스에 있음. -->
+      </div>
+
+      <h1>Badge text</h1>
+      <button class="btn btn-primary">Notification <span class="badge badge-light">4</span></button>
+
+      <h1>Badge link</h1>
+      <a href="#" class="badge badge-primary">primary</a>
+      <a href="#" class="badge badge-success">success</a>
+      <a href="#" class="badge badge-warning">warning</a>
+
+      <script src="js/jquery-3.5.1.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <!--bootstrap javascript 반드시 로딩-->
+      <script>
+        // $(".close").on("click", function () {
+        //   $(this).parent().fadeOut();
+        // });
+        $("#myAlert").on("closed.bs.alert", function () {
+          // do somithing!
+        });
+      </script>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active"> <input type="radio" name="options" id="option1" checked /> Active </label>
+        <label class="btn btn-secondary"> <input type="radio" name="options" id="option2" /> Radio </label>
+        <label class="btn btn-secondary"> <input type="radio" name="options" id="option3" /> Radio </label>
+      </div>
+
+      <!--container-->
+    </div>
+  </body>
+</html>

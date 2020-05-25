@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="todo" placeholder="할 일 입력" />
+    <button id="addBtn">할 일 추가</button>
+    <ul id="todoList"></ul>
+    <script>
+      document.querySelector("#addBtn").addEventListener("click", function () {
+        //input에 쓴 할일, 동적으로 추가할 요소 변수에 각각 담기
+        let getTodo = document.querySelector("#todo").value;
+        let newLi = document.createElement("li");
+
+        //읽어온 input값 생성한 li에 넣기
+        newLi.innerText = getTodo;
+        //ul(todoList)의 자식요소에 newLI 붙히기
+        document.querySelector("#todoList").append(newLi);
+
+        //추가한 할 일(li)를 클릭하면 삭제
+        newLi.addEventListener("click", function () {
+          this.remove();
+        });
+      });
+    </script>
+  </body>
+</html>
