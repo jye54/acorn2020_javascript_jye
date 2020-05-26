@@ -4,29 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <div id="wrap">
-        <p class="my-class">abcd</p>
-    </div>
-    <!-- <a href="hello.html" class="my-link">이동하기</a>
-    동적요소 만들기 -->
+    <!--
+        (Step08). Step08_example, Step08_example1-1 친구 정보를 담은 배열 선언 후 
+        검색한 이름이 친구정보에 있다면 친구의 모든 정보 가져오기.
+        출력Btn 클릭하면 배열에 있는 문자열이 순서대로 div에 노출
+     -->
 
-    <!-- 
-        <p class="my-class">abcd</p>
-        var p = document.createElement("p");
-        p.setAttribute("class","my-class");
-        p.innerText="abcd";
-        document.querySelector("#one").append(p); 
-    -->
+    <input type="text" id="search" placeholder="검색">
+    <button id="check">확인</button>
+    <p id="console"></p>
 
     <script>
-        let NewP = document.querySelector("p");
-        NewP.setAttribute("class", "my-class");
-        NewP.innerText = "abcd";
-        document.querySelector("#wrap").append(NewP);
+        let friends = [];
+        friends.push({ name: '오소연', addr: '브로드웨이' });
+        friends.push({ name: '전미도', addr: '독일' });
+        friends.push({ name: '민우혁', addr: '로마' });
+        friends.push({ name: '서경수', addr: '그리스' });
+
+        document.querySelector("#check").addEventListener("click", function () {
+            let getName = document.querySelector("#search").value;
+            document.querySelector("#search").value = "";
+
+            for (let i = 0; i < friends.length; i++) {
+                if (getName == friends[i].name) {
+                    document.querySelector("#console").innerText =
+                        "이름: " + friends[i].name +
+                        "\n주소: " + friends[i].addr;
+
+                    break;
+                } else {
+                    document.querySelector("#console").innerText = "일치하는 정보가 없습니다."
+                }
+            }
+        });
+
     </script>
 </body>
 

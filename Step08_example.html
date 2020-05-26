@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Step08_example</title>
-  </head>
-  <body>
-    <h1>반복문 활용 예제 테스트 중</h1>
-    <input type="text" id="inputName" placeholder="검색할 이름" />
-    <button id="findBtn">검색</button>
-    <p id="console"></p>
-    <script>
-      //친구 정보를 담을 배열선언, sample Data 담기
-      var friends = [];
-      friends.push({ name: "김구라", phone: "010", email: "aaa@" });
-      friends.push({ name: "김진호", phone: "011", email: "bbb@" });
-      friends.push({ name: "이봉하", phone: "012", email: "ccc@" });
-      friends.push({ name: "이세희", phone: "013", email: "ddd@" });
-      friends.push({ name: "백운용", phone: "014", email: "eee@" });
 
-      /*
-        검색할 이름이 frieds에 있으면 정보출력
-        버튼 클릭하면 실행할 함수 등록
-        1. 입력한 이름을 읽어온다.
-        2. 배열에서 동일한 이름을 가지고 있는 {}를 찾는다.
-      */
-      document.querySelector("#findBtn").addEventListener("click", checkINFO); //Btn 클릭하면 실행
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step08_example</title>
+</head>
 
-      //enter키
-      document
-        .querySelector("#inputName")
-        .addEventListener("keyup", function (event) {
-          if (event.key == "Enter") {
-            checkINFO();
-          }
-        });
+<body>
+  <h1>반복문 활용 예제 테스트 중</h1>
+  <input type="text" id="inputName" placeholder="검색할 이름" />
+  <button id="findBtn">검색</button>
+  <p id="console"></p>
+  <script>
+    //친구 정보를 담을 배열선언, sample Data 담기
+    var friends = [];
+    friends.push({ name: "김구라", phone: "010", email: "aaa@" });
+    friends.push({ name: "김진호", phone: "011", email: "bbb@" });
+    friends.push({ name: "이봉하", phone: "012", email: "ccc@" });
+    friends.push({ name: "이세희", phone: "013", email: "ddd@" });
+    friends.push({ name: "백운용", phone: "014", email: "eee@" });
 
-      function checkINFO() {
-        var Iname = document.querySelector("#inputName").value;
-        for (var i = 0; i < friends.length; i++) {
-          if (Iname == friends[i].name) {
-            document.querySelector("#console").innerText =
-              "name: " +
-              friends[i].name +
-              " phone: " +
-              friends[i].phone +
-              " email: " +
-              friends[i].email;
-            break;
-          } else {
-            // console.log("없음");
-            document.querySelector("#console").innerText =
-              Iname + "(으)로 검색된 정보가 없습니다.";
-          }
+    /*
+      검색할 이름이 frieds에 있으면 정보출력
+      버튼 클릭하면 실행할 함수 등록
+      1. 입력한 이름을 읽어온다.
+      2. 배열에서 동일한 이름을 가지고 있는 {}를 찾는다.
+    */
+    document.querySelector("#findBtn").addEventListener("click", checkINFO); //Btn 클릭하면 실행
+
+    //enter키
+    document
+      .querySelector("#inputName")
+      .addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+          checkINFO();
+        }
+      });
+
+    function checkINFO() {
+      var Iname = document.querySelector("#inputName").value;
+      for (var i = 0; i < friends.length; i++) {
+        if (Iname == friends[i].name) {
+          document.querySelector("#console").innerText =
+            "name: " +
+            friends[i].name +
+            " phone: " +
+            friends[i].phone +
+            " email: " +
+            friends[i].email;
+          break;
+        } else {
+          // console.log("없음");
+          document.querySelector("#console").innerText =
+            Iname + "(으)로 검색된 정보가 없습니다.";
         }
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
