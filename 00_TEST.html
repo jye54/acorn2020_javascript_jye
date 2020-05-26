@@ -8,39 +8,61 @@
 </head>
 
 <body>
-    <!--
-        (Step08). Step08_example, Step08_example1-1 친구 정보를 담은 배열 선언 후 
-        검색한 이름이 친구정보에 있다면 친구의 모든 정보 가져오기.
-        출력Btn 클릭하면 배열에 있는 문자열이 순서대로 div에 노출
-     -->
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div>
 
-    <input type="text" id="search" placeholder="검색">
-    <button id="check">확인</button>
-    <p id="console"></p>
+    <div id="one"></div>
+    <button id="Btn">Btn</button>
 
     <script>
-        let friends = [];
-        friends.push({ name: '오소연', addr: '브로드웨이' });
-        friends.push({ name: '전미도', addr: '독일' });
-        friends.push({ name: '민우혁', addr: '로마' });
-        friends.push({ name: '서경수', addr: '그리스' });
+        // Caution! page loading, 특정시점(btn Click)
 
-        document.querySelector("#check").addEventListener("click", function () {
-            let getName = document.querySelector("#search").value;
-            document.querySelector("#search").value = "";
+        // 1.
+        console.log("hello");
 
-            for (let i = 0; i < friends.length; i++) {
-                if (getName == friends[i].name) {
-                    document.querySelector("#console").innerText =
-                        "이름: " + friends[i].name +
-                        "\n주소: " + friends[i].addr;
-
-                    break;
-                } else {
-                    document.querySelector("#console").innerText = "일치하는 정보가 없습니다."
-                }
-            }
+        // 1-1.
+        document.querySelector.addEnevtListener("click", function () {
+            console.log("hello");
         });
+
+        // 2.
+        for (let i = 0; i < arr.lenght; i++) {
+            // arr[i]랑 같이 쓰임
+        }
+
+        // 3.
+        const names = ["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+
+        for (let i = 0; i < names.length; i++) {
+            var temp = names[i];
+            alert(names[i]);
+            console.log(names[i]);
+        }
+
+        // 4. div박스 클릭하면 원하는 text로 변경. (Step06_EventListener1~3.html)
+        let divs = document.querySelectorAll("div"); //배열
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].addEventListener;
+            divs[i].setAttribute("id", "idddd");
+            divs[i].innerText = "clicked"
+        }
+
+        //5. 동적 요소 추가
+        let img = document.createElement("img");
+        img.setAttribute("src", "images/1.jpg");
+        document.querySelector("#one").append(img);
+
+        //5-1.
+        document.querySelector("#Btn").addEventListener("click", function () {
+            let p = document.createElement("p");
+            p.setAttribute("class", "test");
+            p.innerText = "abcd";
+            document.querySelector("#one").append(p);
+        });
+
 
     </script>
 </body>
