@@ -31,4 +31,7 @@ Date. 2020. 4. 20
   - Step05_function2.html: 함수 선언식, 표현식
   - Step05_function6.html: 즉시 실행 함수
 
-- ## **Step06 EventListener**
+- **Step06 EventListener**
+
+  - .addEventListener("click", function(){});
+  - example: 배열안에 있는 div참조값을 이용하서 이벤트 등록

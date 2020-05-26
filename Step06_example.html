@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Step06_example</title>
-  </head>
-  <body>
-    <input type="text" id="inputMsg" />
-    <button id="sendBtn">전송</button>
-    <p id="console"></p>
 
-    <script>
-      // //input요소에 keyup이벤트가 일어났을 때 호출되는 함수 등록
-      // document.querySelector("#inputMsg").addEventListener("keyup", function (event) {
-      //   //event == object
-      //   console.log(event);
-      //   if (event.key == "Enter") {
-      //     //1. input에 입력한 value 읽어오기
-      //     var msg = document.querySelector("#inputMsg").value;
-      //     //2. p요소의 innerText에 반영하기
-      //     document.querySelector("#console").innerText = msg;
-      //     //3. 입력창 초기화
-      //     document.querySelector("#inputMsg").value = "";
-      //   }
-      // });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step06_example</title>
+</head>
 
-      document.querySelector("#sendBtn").addEventListener("click", send);
+<body>
+  <input type="text" id="inputMsg" />
+  <button id="sendBtn">전송</button>
+  <p id="console"></p>
 
-      function send() {
-        var v = document.querySelector("#inputMsg").value;
-        console.log(v);
-        document.querySelector("#console").innerText = v;
-      }
-    </script>
-  </body>
+  <script>
+    // //input요소에 keyup이벤트가 일어났을 때 호출되는 함수 등록
+    // document.querySelector("#inputMsg").addEventListener("keyup", function (event) {
+    //   //event == object
+    //   console.log(event);
+    //   if (event.key == "Enter") {
+    //     //1. input에 입력한 value 읽어오기
+    //     var msg = document.querySelector("#inputMsg").value;
+    //     //2. p요소의 innerText에 반영하기
+    //     document.querySelector("#console").innerText = msg;
+    //     //3. 입력창 초기화
+    //     document.querySelector("#inputMsg").value = "";
+    //   }
+    // });
+
+    document.querySelector("#sendBtn").addEventListener("click", send);
+
+    function send() {
+      var v = document.querySelector("#inputMsg").value;
+      console.log(v);
+      document.querySelector("#console").innerText = v;
+    }
+  </script>
+</body>
+
 </html>
