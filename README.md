@@ -41,13 +41,13 @@ Date. 2020. 4. 20
   - example: 키와 몸무게를 입력받아, 놀이기구 탑승 여부 확인
 
 -  **Step08 loop**
-  - 반복문 for, for in, forEach, while
-  - example: 입력받은 이름이 friends[arr]에 있으면 해당 정보 전부 출력
+    - 반복문 for, for in, forEach, while
+    - example: 입력받은 이름이 friends[arr]에 있으면 해당 정보 전부 출력
 
 -  **Step09 if**
-  - if, else if
-  - example: 성적출력
-  - example2: 그림판 만들기
+    - if, else if
+    - example: 성적출력
+    - example2: 그림판 만들기
 
 - **Step10 String type**
   - String(객체)의 attribute와 function 확인
@@ -91,3 +91,33 @@ Date. 2020. 4. 20
 - **Step06 example**
   - Step01 ~ Step05 연습하기   
     (to do list입력 받아서 동적으로 생성한 li요소에 노출, Btn클릭하면 해당 li삭제)
+
+---
+
+## Bootstrap Step List
+
+- **Bootstrap01**
+  - Bootstrap(v4.5), jquery plugin 로딩
+  - Button Style
+
+- **Bootstrap02 Container**
+  - sm, lg, xl, fluid
+
+- **Bootstrap03 Grid**
+  - 01: col: 모든 영역에서 1 : 1 : 1의 폭을 가짐
+  - 02: 이미지 활용하기
+
+- **Bootstrap04 Content**
+  - dl, dt, dd (정의형 목록)
+  - class="lead"
+  - class="blockquote" (인용구)
+  - list-inline (ul, ol을 한 줄로 표현)
+  - table (style)
+  - figure class="figure" 텍스트와 연관된 text
+
+- **Bootstrap05 Component**
+  - Alert
+  - Badge text
+  - Badge link
+
+- **Bootstrap05 Icon**
